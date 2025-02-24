@@ -11,7 +11,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: rgb(227, 247, 246);
+    background-color: rgb(255, 255, 255);
 }
 
 h1.title {
@@ -34,7 +34,7 @@ h1.title {
 button {
     flex: 1; /* Ensure buttons take equal width */
     padding: 8px; /* Add padding */
-    background-color: #a09599; /* Changed button color */
+    background-color: #508ddd; /* Changed button color */
     color: rgb(15, 10, 10);
     border: none;
     cursor: pointer;
@@ -98,7 +98,7 @@ table {
     width: 100%;
     margin-top: 10px;
     border-collapse: collapse;
-    border: 1px solid #ddd;
+    border: 1px solid #d68d8d;
     table-layout: fixed; /* Ensure consistent column width */
 }
 

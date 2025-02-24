@@ -64,16 +64,29 @@ function reset() {
 }
 
 function calculateGPA() {
-  let table = document.getElementById("table");
-  let length_t = table.rows.length;
-  let total_credit_points = 0;
-  let total_credits = 0;
-  for (let i = 1; i < length_t; i++) {
-    let credit_points = parseFloat(document.getElementById(`credit_points_${i}`).value);
-    let credits = parseFloat(document.getElementById(`credits_${i}`).value);
-    total_credit_points += credit_points;
-    total_credits += credits;
+   
+    let table = document.getElementById("table");
+    let length_t = table.rows.length;
+    let total_credit_points = 0;
+    let total_credits = 0;
+    
+    for (let i = 1; i < length_t; i++) {
+      let credits = document.getElementById(`credits_${i}`).value.trim();
+      let grade_points = document.getElementById(`grade_points_${i}`).value.trim();
+      let credit_points = document.getElementById(`credit_points_${i}`).value.trim();
+  
+      // Check if any input is empty
+      if (credits === "" || grade_points === "") {
+        alert("Please fill all input boxes or delete empty rows before calculating GPA.");
+        return;
+      }
+  
+      total_credit_points += parseFloat(credit_points);
+      total_credits += parseFloat(credits);
+    }
+  
+    let gpa = total_credit_points / total_credits;
+    document.getElementById("gpa").textContent = `GPA: ${gpa.toFixed(2)}`;
   }
-  let gpa = total_credit_points / total_credits;
-  document.getElementById("gpa").textContent = `GPA: ${gpa.toFixed(2)}`;
-}
+  
+
